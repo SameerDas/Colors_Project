@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Colors Changing</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        body{
+            text-align: center;
+            background-color:#f1f5f8 ;
+        }
+
+        ul{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }a{
+            color:black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h4{
+            padding-left: 300px;
+            font-size: 30px;
+            color:skyblue;
+            font-weight: bold;
+        }
+        .li1{
+            padding-left: 500px;
+            font-size: 30px;
+         }
+         .li2{
+            padding-left: 50px;
+            font-size: 30px;
+         }
+        nav{
+            display: flex;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0px 6px 17px gray;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        main{
+            margin-top: 17%;
+            
+        }
+        button{
+            padding:10px;
+            padding-left:40px;
+            padding-right:40px;
+            font-size: 30px;
+            border-radius: 5px;
+            background-color: white;
+            margin-top: 20px;
+        }
+        button:hover{
+            background-color: black;
+            color:white;
+            border: 3px solid skyblue;
+        }
+        .h2{
+            background-color: black;
+            color:white;
+            width:fit-content;
+            margin-left: 350px;
+            height:90px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            border-radius:5px;
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: 30px;
+        }
+        span{
+            color:skyblue;
+        }
+                  
+    </style>
+</head>
+<body>
+    <nav>
+    <h4>Color  Flipper</h4>
+    </nav>
+    <main>
+        <div class="h2"><h2>Background-Color:<span class="color">#f1f5f8</span></h2></div>
+        <button id="btn-el">Click me</button>
+    </main>
+    <script>
+        var colors=["green","red","rgba(133,122,200)","#f15025"];
+        var btnEl=document.getElementById("btn-el");
+        var col=document.querySelector(".color");
+        btnEl.addEventListener("click",function(){
+            var random=getRandomNumber();
+            document.body.style.backgroundColor=colors[random];
+            col.innerHTML=" "+colors[random];
+        })
+        function getRandomNumber(){
+            return Math.floor(Math.random()*colors.length);
+        }
+    </script>
+
+</body>
+</html>
